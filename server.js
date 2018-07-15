@@ -38,7 +38,7 @@ hbs.registerHelper('screamIt',(text) => {
   return text.toUpperCase();
 });
 
-app.get('/',(req,res) => {
+app.get('/',(req,res) => {             //app.gte is a request handler
   // res.send('<h1>hello fucker</h1>');
   res.render('home.hbs',{
     pageTitle:'Home Page',
@@ -66,6 +66,13 @@ app.get('/bad',(req,res) => {
   });
 
 
+});
+
+app.get('/project',(req,res) => {
+  res.render('project.hbs',{
+    projectTitle:'Making chatbots',
+    pageTitle:'Project'
+  });
 });
 
 app.listen(port, () => {
